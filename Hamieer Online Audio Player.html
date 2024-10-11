@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamieer Online Audio Player</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: white;
+        }
+        #container{
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            display: flex;
+        }
+        #sideMenu{
+            width: 20%;
+            height: 100%;
+            background-color: rgb(228, 149, 4);
+        }
+        #content{
+            width: 80%;
+            height: 100%;
+            background-color: #0c243e;
+        }
+        #hamieer{
+            width: 100%;
+            height: 70px;
+            background-color: rgb(234, 160, 23);
+            background-color: #0a1f34;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #hamieerLogo{
+            transform: rotateZ(2deg);
+        }
+        #features{
+            width: 100%;
+            height: 84.4%;
+            background-color: rgba(234, 160, 23, 0);
+        }
+        #featuresIterm{
+            width: 100%;
+            height: 50px;
+            background-color: #0a1f34;
+            display: flex;
+            align-items: center;
+            color: white; 
+            gap: 15px;
+            padding-left: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0);
+            border-bottom: 1px solid rgba(255, 255, 255, 0);
+        }
+        #featuresIterm:hover{
+            width: 100%;
+            height: 50px;
+            background-color: #102d47;
+            box-shadow:  0 2px 3px #00000006;
+            border-top: 1px solid rgba(241, 176, 56, 0.563);
+            border-bottom: 1px solid rgba(241, 176, 56, 0.477);
+        }
+        #ActiveIterm{
+            width: 100%;
+            height: 50px;
+            background-color: #f1b038;
+            border-top: 1px solid rgba(255, 255, 255, 0.122);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.121);
+            display: flex;
+            align-items: center;
+            color: white; 
+            padding-left: 10px;
+            gap: 10px;
+        }
+
+        #profile{
+            width: 100%;
+            height: 50px;
+            background-color: rgb(234, 160, 23);
+        }
+        #profileIconEffects{
+            background-color: rgba(255, 255, 255, 0);
+            width: 33px;
+            height: 33px;
+            border-radius: 50%;
+            border: 1px solid rgb(234, 160, 23);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 1px;
+            padding-left: 1px;
+            padding-right: 1px;
+        }
+        #email{
+            font-size: 12px;
+        }
+        #userName{
+            font-size: 10px;
+            color:  rgb(234, 160, 23);
+        }
+
+
+        #Navi{
+            width: 96.7%;
+            height: 50px;
+            background-color: #0a1f34;
+            box-shadow: 0 1px 3px #0000001b;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.248);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        #preview{
+            width: 96.7%;
+            min-height: fit-content;
+            background-color: #0c243e;
+            box-shadow: 0 1px 3px #0000001b;
+            padding: 20px;
+        }
+        #previewContent{
+            height: 644px;
+            background-color: #0a1f34;
+            box-shadow: 0 1px 3px #0000001b;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.103);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.188);
+            border-right: 1px solid rgba(255, 255, 255, 0.188);
+
+        }
+        #controlSection{
+            width: 100%;
+            height: 50px;
+            background-color: #0a1f34;
+            box-shadow: 0 1px 3px #0000001b;
+            border-top: 1px solid rgba(255, 255, 255, 0.248);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        #searchArea{
+            width: 92%;
+            height: 35px;
+            background-color: rgba(0, 0, 0, 0);
+            border-radius: 30px;
+            box-shadow: 0 1px 3px #00000007;
+            border: 1px solid rgba(255, 255, 255, 0.247);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-left: 12px;
+        }
+        #menu{
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        #inputArea{
+            background-color: #00000000;
+            color: #ffffff;
+            font-size: 12px;
+            border: none;
+        }
+
+        #controls{
+            display: flex;
+            gap: 40px;
+            padding-left: 30px;
+        }
+        #timer{
+            font-size: 13px;
+            letter-spacing: 5px;
+            color: white;
+        }
+        #iconEffects:hover{
+            transform: scale(1.2);
+            transition: 0.2s;
+        }
+        #submenu{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        #microRecorder{
+            transform: scale(1.2);
+            transition: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="sideMenu">
+            <div id="hamieer">
+                <img id="hamieerLogo" src="./logos/Hamieer Logo.png" width="150" alt="">
+            </div>
+            <div id="features">
+                <div id="ActiveIterm">
+                    <img src="./icons/icons8-circled-play-100 (1).png" width="27" alt="" style="filter: brightness(0) invert(1);">
+                    <span id="itermDescript">Now Playing</span>
+                </div>
+                <div id="featuresIterm">
+                    <img src="./icons/icons8-lounge-music-playlist-90.png" width="27" alt="" style="filter: brightness(0) invert(1);">
+                    <span id="itermDescript">Queue</span>
+                </div>
+                <div id="featuresIterm">
+                    <img src="./icons/icons8-playlist-90.png" width="27" alt="" style="filter: brightness(0) invert(1);">
+                    <span id="itermDescript">Playlist</span>
+                </div>
+                <div id="featuresIterm">
+                    <img src="./icons/icons8-christmas-songs-50.png" width="27" alt="" style="filter: brightness(0) invert(1);">
+                    <span id="itermDescript">Genre</span>
+                </div>
+                <div id="featuresIterm">
+                    <img src="./icons/icons8-music-folder-100 (1).png" width="27" alt="" style="filter: brightness(0) invert(1);">
+                    <span id="itermDescript">Folders</span>
+                </div>
+                <div id="featuresIterm">
+                    <img src="./icons/icons8-music-album-100.png" width="27" alt="" style="filter: brightness(0) invert(1);">
+                    <span id="itermDescript">Album Art</span>
+                </div>
+            </div>
+            <div id="profile">
+                <div id="featuresIterm">
+                    <span id="profileIconEffects">
+                       <img src="./icons/account_profile_user_icon_190494.png" width="30" height="30" alt="" style="filter: brightness(0) invert(1);">
+                    </span>
+                <span id="itermDescript">
+                    <span id="email">fredmjr37@gmail.com</span><br>
+                    <span id="userName">Fredmjr</span>
+                </span>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            <div id="Navi">
+                <div id="searchArea">
+                    <img src="./icons/search.png" width="18" alt="" style="filter: brightness(0) invert(1);">
+                    <input class="recordered" id="inputArea" type="text" name="">
+                </div>
+                <div >
+                    <img id="iconEffects" src="./icons/microphone.png" width="20" alt="" style="filter: brightness(0) invert(1);">
+                </div>
+                <div id="menu">
+                    <img src="./icons/dots.png" width="20" alt="" style="filter: brightness(0) invert(1);">
+                </div>
+            </div>
+            <div id="preview">
+                <div id="previewContent">
+                    <img src="./logos/Hamieer Logo Symbol.png" width="200" alt="">
+                </div>
+            </div>
+            <div id="controlSection">
+                <span id="controls">
+                    <img id="iconEffects" src="./icons/music-play-button.png" width="15" height="15" alt="" style="filter: brightness(0) invert(1);">
+                    <img id="iconEffects" src="./icons/previous.png" width="15" height="15" alt="" style="filter: brightness(0) invert(1); opacity: 50%;">
+                    <img id="iconEffects" src="./icons/play.png" wwidth="15" height="15" alt="" style="filter: brightness(0) invert(1);">
+                    <img id="iconEffects" src="./icons/forward.png" width="15" height="15" alt="" style="filter: brightness(0) invert(1); opacity: 50%;">
+                    <img id="iconEffects" src="./icons/music-play-next-button.png" width="15" height="15" alt="" style="filter: brightness(0) invert(1);">
+                    <img id="iconEffects" src="./icons/repeat (1).png" width="15" height="15" alt="" style="filter: brightness(0) invert(1);">
+                    <img id="iconEffects" src="./icons/shuffle.png" width="15" height="15" alt="" style="filter: brightness(0) invert(1);">
+                    <span id="timer">00:00:00/00:00:00</span>
+                </span>
+                <span id="submenu"><img id="iconEffects" src="./icons/icons8-menu-480.png" width="22" alt="" style="filter: brightness(0) invert(1);"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="./Hamieer.js"></script>
+</body>
+</html>
